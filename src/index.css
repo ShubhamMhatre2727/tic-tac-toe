@@ -1,0 +1,112 @@
+/* === General Page Styling === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928DAB); /* gradient background */
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Title === */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* === Status Message (whose turn / result) === */
+#status {
+  margin: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px); /* glass effect */
+}
+
+/* === Game Board (3x3 grid) === */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  margin: 20px auto;
+}
+
+/* === Individual Cell Styling === */
+.cell {
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Hover + Click Animation */
+.cell:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+/* === Reset Button === */
+#reset {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #ff4b2b, #ff416c); /* red-pink gradient */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+/* Reset Button Hover & Click Effects */
+#reset:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+#reset:active {
+  transform: translateY(2px);
+}
+
+/* === Responsive Design (for mobile) === */
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  #status {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
